@@ -68,5 +68,14 @@ namespace Lib1
                 m_handlers[i].close();
             }
         }
+
+        public static void ExampleLogger()
+        {
+            Log log = new Log();
+            log.Handlers.Add(new FileLogHandler("ExampleFileName.txt"));
+            log.debug("This message would be printed out to 'ExampleFilename.txt'");
+            log.warning("This is a notification of something that is handled, but may produce errors down the line");
+            log.error("This is for information about fatal errors that prevents something from continuing as it should, good for exceptions");
+        }
     }
 }
